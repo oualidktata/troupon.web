@@ -1,0 +1,214 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "troupon-header": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/troupon-header",
+      "sourceRoot": "projects/troupon-header/src",
+      "prefix": "troupon",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/troupon-header",
+            "index": "projects/troupon-header/src/index.html",
+            "main": "projects/troupon-header/src/main.ts",
+            "polyfills": "projects/troupon-header/src/polyfills.ts",
+            "tsConfig": "projects/troupon-header/tsconfig.app.json",
+            "inlineStyleLanguage": "less",
+            "assets": [
+              "projects/troupon-header/src/favicon.ico",
+              "projects/troupon-header/src/assets"
+            ],
+            "styles": [
+              "projects/troupon-header/src/styles.less"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/troupon-header/src/environments/environment.ts",
+                  "with": "projects/troupon-header/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "none"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "troupon-header:build:production"
+            },
+            "development": {
+              "browserTarget": "troupon-header:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "troupon-header:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/troupon-header/src/test.ts",
+            "polyfills": "projects/troupon-header/src/polyfills.ts",
+            "tsConfig": "projects/troupon-header/tsconfig.spec.json",
+            "karmaConfig": "projects/troupon-header/karma.conf.js",
+            "inlineStyleLanguage": "less",
+            "assets": [
+              "projects/troupon-header/src/favicon.ico",
+              "projects/troupon-header/src/assets"
+            ],
+            "styles": [
+              "projects/troupon-header/src/styles.less"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "troupon-content": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/troupon-content",
+      "sourceRoot": "projects/troupon-content/src",
+      "prefix": "troupon",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/troupon-content",
+            "index": "projects/troupon-content/src/index.html",
+            "main": "projects/troupon-content/src/main.ts",
+            "polyfills": "projects/troupon-content/src/polyfills.ts",
+            "tsConfig": "projects/troupon-content/tsconfig.app.json",
+            "inlineStyleLanguage": "less",
+            "assets": [
+              "projects/troupon-content/src/favicon.ico",
+              "projects/troupon-content/src/assets"
+            ],
+            "styles": [
+              "projects/troupon-content/src/styles.less"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/troupon-content/src/environments/environment.ts",
+                  "with": "projects/troupon-content/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "none"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "troupon-content:build:production"
+            },
+            "development": {
+              "browserTarget": "troupon-content:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "troupon-content:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/troupon-content/src/test.ts",
+            "polyfills": "projects/troupon-content/src/polyfills.ts",
+            "tsConfig": "projects/troupon-content/tsconfig.spec.json",
+            "karmaConfig": "projects/troupon-content/karma.conf.js",
+            "inlineStyleLanguage": "less",
+            "assets": [
+              "projects/troupon-content/src/favicon.ico",
+              "projects/troupon-content/src/assets"
+            ],
+            "styles": [
+              "projects/troupon-content/src/styles.less"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "troupon-header"
+}
